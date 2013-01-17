@@ -14,3 +14,13 @@ https://docs.google.com/document/d/18RjvxEcr97CpnBm3q93G-f6Nh0yh1F55pq4leahlUgA/
 
 SCRUMY URL:
 http://www.scrumy.com/blades84compile
+
+
+MIEMBROS:
+
+Christie Navarrete
+Alfonso Morán
+Edwin Rivera
+Julio Salgado
+
+Red Social: Facebook
