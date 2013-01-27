@@ -1,0 +1,35 @@
+<h1>Listing comments</h1>
+
+<table border="1">
+  <tr>
+    <th>Tournament</th>
+    <th>User</th>
+    <th>Comentario</th>
+    <th>Calificacion</th>
+    <th>Replica</th>
+    <th>Calificador</th>
+    <th>Duplica</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td><%= comment.tournament.nombre %></td>
+    <td><%= comment.user.nombre %></td>
+    <td><%= comment.comentario %></td>
+    <td><%= comment.calificacion %></td>
+    <td><%= comment.replica %></td>
+    <td><%= comment.calificador %></td>
+    <td><%= comment.duplica %></td>
+    <td><%= link_to 'Show', comment %></td>
+    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+    <td><%= link_to 'Destroy', comment, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Comment', new_comment_path %>

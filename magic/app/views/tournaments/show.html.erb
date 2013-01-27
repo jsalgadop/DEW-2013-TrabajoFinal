@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @tournament.nombre %>
+</p>
+
+<p>
+  <b>Cantparti:</b>
+  <%= @tournament.cantparti %>
+</p>
+
+<p>
+  <b>Local:</b>
+  <%= @tournament.local.nombre %>
+</p>
+
+<p>
+  <b>Fechahora:</b>
+  <%= @tournament.fechahora %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @tournament.estado %>
+</p>
+
+
+<%= link_to 'Edit', edit_tournament_path(@tournament) %> |
+<%= link_to 'Back', tournaments_path %>

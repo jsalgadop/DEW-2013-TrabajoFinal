@@ -1,0 +1,69 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :paterno %><br />
+    <%= f.text_field :paterno %>
+  </div>
+  <div class="field">
+    <%= f.label :materno %><br />
+    <%= f.text_field :materno %>
+  </div>
+  <div class="field">
+    <%= f.label :sexo %><br />
+    <%= f.select :sexo, [['Masculino','Masculino'],['Femenino','Femenino']] %>
+  </div>
+  <div class="field">
+    <%= f.label :tipodocumento %><br />
+    <%= f.select :tipodocumento, [['DNI','DNI'],['RUC','RUC'],['Carné Extranjería','Carné Extranjería']] %>
+  </div>
+  <div class="field">
+    <%= f.label :numerodocumento %><br />
+    <%= f.text_field :numerodocumento %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br />
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :distrito %><br />
+    <%= f.text_field :distrito %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :fechanacimiento %><br />
+    <%= f.date_select :fechanacimiento %>
+  </div>
+  <div class="field">
+    <%= f.label :celular %><br />
+    <%= f.text_field :celular %>
+  </div>
+  <div class="field">
+    <%= f.label :nombreusuario %><br />
+    <%= f.text_field :nombreusuario %>
+  </div>
+  <div class="field">
+    <%= f.label :claveusuario %><br />
+    <%= f.text_field :claveusuario %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

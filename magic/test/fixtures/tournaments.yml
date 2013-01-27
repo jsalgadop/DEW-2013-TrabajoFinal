@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  cantparti: 1
+  local: 
+  fechahora: 2013-01-27 13:06:28
+  estado: MyString
+
+two:
+  nombre: MyString
+  cantparti: 1
+  local: 
+  fechahora: 2013-01-27 13:06:28
+  estado: MyString

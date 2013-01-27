@@ -1,0 +1,45 @@
+<%= form_for(@comment) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tournament %><br />
+    <%= f.collection_select :tournament_id, Tournament.all, :id, :nombre, :prompt => true %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.collection_select :user_id, User.all, :id, :nombre, :prompt => true %>
+  </div>
+  <div class="field">
+    <%= f.label :comentario %><br />
+    <%= f.text_area :comentario %>
+  </div>
+  <div class="field">
+    <%= f.label :calificacion %><br />
+    <%= f.select :calificacion, [['1','1'],['2','2'],['3','3'],['4','4'],['5','5']] %>
+  </div>
+  <div class="field">
+    <%= f.label :replica %><br />
+    <%= f.text_area :replica %>
+  </div>
+  <div class="field">
+    <%= f.label :calificador %><br />
+    <%= f.text_field :calificador %>
+  </div>
+  <div class="field">
+    <%= f.label :duplica %><br />
+    <%= f.text_area :duplica %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

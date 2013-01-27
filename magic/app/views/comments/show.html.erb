@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tournament:</b>
+  <%= @comment.tournament.nombre %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @comment.user.nombre %>
+</p>
+
+<p>
+  <b>Comentario:</b>
+  <%= @comment.comentario %>
+</p>
+
+<p>
+  <b>Calificacion:</b>
+  <%= @comment.calificacion %>
+</p>
+
+<p>
+  <b>Replica:</b>
+  <%= @comment.replica %>
+</p>
+
+<p>
+  <b>Calificador:</b>
+  <%= @comment.calificador %>
+</p>
+
+<p>
+  <b>Duplica:</b>
+  <%= @comment.duplica %>
+</p>
+
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tournament: 
+  user: 
+  ganador: false
+
+two:
+  tournament: 
+  user: 
+  ganador: false

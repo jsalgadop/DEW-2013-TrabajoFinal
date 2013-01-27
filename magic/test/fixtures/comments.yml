@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tournament: 
+  user: 
+  comentario: MyText
+  calificacion: 1
+  replica: MyText
+  calificador: MyString
+  duplica: MyText
+
+two:
+  tournament: 
+  user: 
+  comentario: MyText
+  calificacion: 1
+  replica: MyText
+  calificador: MyString
+  duplica: MyText
