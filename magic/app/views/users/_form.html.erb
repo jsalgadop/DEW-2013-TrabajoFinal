@@ -1,0 +1,63 @@
+<%= simple_form_for(@user) do |f| %>
+   <%  f.error_notification %>
+
+  <div class="field">
+    <%= f.input :name %>
+  </div>
+
+  <div class="field">
+    <%= f.input :paterno %>
+  </div>
+
+  <div class="field">
+    <%= f.input :materno %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sexo %><br />
+    <%= f.select :sexo, [['Masculino','Masculino'],['Femenino','Femenino']] %>
+  </div>
+
+ <div class="field">
+    <%= f.label :tipodocumento %><br />
+    <%= f.select :tipodocumento, [['DNI','DNI'],['RUC','RUC'],['Carné Extranjería','Carné Extranjería']] %>
+  </div>
+
+  <div class="field">
+    <%= f.input :numerodocumento %>
+  </div>
+
+  <div class="field">
+      <%= f.input :direccion %>
+  </div>
+
+  <div class="field">
+    <%= f.input :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fechanacimiento %><br />
+    <%= f.date_select :fechanacimiento,  :start_year => 1950, :end_year => (Time.now.year - 10)%>
+  </div>
+
+  <div class="field">
+     <%= f.input :celular %>
+  </div>
+
+  <div class="field">
+    <%= f.input :nombreusuario %>
+  </div>
+
+  <div class="field">
+    <%= f.input :claveusuario %>
+  </div>
+
+ <div class="field">
+
+    <%= f.association :district %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<h1>Listing members</h1>
+
+<table>
+  <tr>
+    <th>Ganador   </th>
+    <th>Tournament  </th>
+    <th>Member  </th>
+    <th>Winner  </th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @members.each do |member| %>
+  <tr>
+
+    <td><%= member.tournament.name %></td><br>
+    <td><%= member.user.name + ' ' + member.user.paterno + ' ' + member.user.materno %></td><br>
+    <td><%= member.ganador %></td><br>  
+    <td><%= link_to 'Show', member %></td><br>
+    <td><%= link_to 'Edit', edit_member_path(member) %></td>
+    <td><%= link_to 'Destroy', member, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

@@ -1,0 +1,12 @@
+<%= form_tag controller_path, method: :get do %>
+    <%= label_tag :option1 %>
+    <%= radio_button_tag :option, "1" %>
+    <br>
+    <%= label_tag :option2 %>
+    <%= radio_button_tag :option, "2" %>
+    <br>
+    <%= label_tag :option3 %>
+    <%= radio_button_tag :option, "3" %>
+    <br>
+<%= submit_tag "Search", name: nil %>
+<% end %>

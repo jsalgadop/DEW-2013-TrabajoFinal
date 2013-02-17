@@ -1,0 +1,16 @@
+<h1>Log in</h1>  
+
+  <%= form_for(@user, :actions => "authenticated") do |f| %>
+  
+  <div class="field">
+    <%= f.label  "Nombre de Usuario" %> <br />
+    <%= f.text_field :nombreusuario %>
+  </div>
+  <div class="field">
+    <%= f.label  "Password" %> <br />
+    <%= f.text_field :claveusuario %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Log in"%>
+  </div>
+<% end %>

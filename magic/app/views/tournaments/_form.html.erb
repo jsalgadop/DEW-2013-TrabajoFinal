@@ -1,0 +1,30 @@
+<%= simple_form_for(@tournament) do |f| %>
+   <%  f.error_notification %>
+
+
+  <div class="field">
+
+    <%= f.input :name %>
+  </div>
+  <div class="field">
+    <%= f.label :cant_part %><br />
+    <%= f.number_field :cant_part,:min => 1,:max => 8 %>
+  </div>
+
+ 
+  <div class="field">
+    <%= f.label :fecha_hora %><br />
+    <%= f.datetime_select :fecha_hora, :start_year => Time.now.year %>
+  </div>
+  <div class="field">
+
+     <%= f.select :estado, [['Pendiente','Pendiente'],['Activo','Activo'],['Finalizado','Finalizado']] %>
+  </div>
+  <div class="field">
+  
+    <%= f.association :local %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

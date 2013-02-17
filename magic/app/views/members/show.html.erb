@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ganador:</b>
+  <%= @member.ganador %>
+</p>
+
+<p>
+  <b>Tournament:</b>
+  <%= @member.tournament.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @member.user.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

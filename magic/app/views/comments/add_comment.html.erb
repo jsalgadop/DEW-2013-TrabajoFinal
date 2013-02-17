@@ -1,0 +1,21 @@
+<h1>Tournament's Comment</h1>
+
+<br>
+
+<p>
+  	Current tournament: <b><%= $current_tournament.name %></b>
+</p>
+
+<p>
+    Current User: <b><%= User.find_by_nombreusuario($user.nombre).nombreusuario + ' ' + User.find_by_nombreusuario($user.nombre).paterno %></b>
+</p>
+
+<%= form_for(@comment, :url => "save_comment") do |f| %>
+  <div class="field">
+    <%= f.label "Comment" %><br />
+    <%= f.text_area :comentario %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Add comment" %>
+  </div>
+<% end %>

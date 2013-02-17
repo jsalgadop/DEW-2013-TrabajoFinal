@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @local.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @local.address %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @local.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @local.longitude %>
+</p>
+
+<p>
+  <b>Telefono:</b>
+  <%= @local.telefono %>
+</p>
+
+<p>
+  <b>District:</b>
+  <%= @local.district.name %>
+</p>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@local.latitude}%2C#{@local.longitude}" %>
+<% for local in @local.nearbys(10) %>
+  <li><%= link_to local.address, local %> (<%= local.distance.round(2) %> miles)</li>
+<% end %>
+
+
+
+
+<%= link_to 'Edit', edit_local_path(@local) %> |
+<%= link_to 'Back', locals_path %>

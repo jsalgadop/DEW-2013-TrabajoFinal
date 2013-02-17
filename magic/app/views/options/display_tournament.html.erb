@@ -1,0 +1,57 @@
+<h1>Listing selected tournaments</h1>
+
+<br>
+
+<p>
+	<%= $option.opcion %>
+</p>
+
+<p>
+Current User: <b><%= User.find_by_name($user.name).name + ' ' +User.find_by_name($user.name).paterno %></b>
+</p>
+
+<table border="1">
+	<tr>
+		<th>Name</th>
+	    <th>Local</th>
+    	<th>Capacity</th>
+    	<th>Players</th>
+	    <th>Date and Time</th>
+    	<th>Status</th>
+    	<th></th>
+    	<th></th>
+    	<th></th>
+	</tr>
+<% @tournaments.each do |tournament|%>
+	<tr>
+		<td><%= tournament.name %></td>
+		<td><%= tournament.local.name %></td>
+		<td align="center"><%= tournament.cant_part %></td>
+		<td><%= tournament.fecha_hora %></td>
+		<td><%= tournament.estado %></td>
+		<td>
+		<% if tournament.cantregis != tournament.cant_part %>
+			<%= link_to 'Participate', register_tournament_option_path(tournament) %>
+		<% else %>
+			Complete
+		<% end %>
+		</td>
+    	<td>
+		<% if tournament.cantregis != 0 %>
+			<%= link_to 'View members', view_member_member_path(tournament) %>
+		<% else %>
+			No members
+		<% end %>
+    	</td>
+		<td>
+			Comment soon
+		</td>
+	<tr>
+<% end %>
+</table>
+
+<p>
+	Total tournaments: <%= @tournaments.count %>
+</p>
+
+<%= link_to 'Back', options_path %>

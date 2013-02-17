@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  opcion: 1
+  local: 
+  estadp: MyString
+
+two:
+  opcion: 1
+  local: 
+  estadp: MyString

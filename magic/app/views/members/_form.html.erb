@@ -1,0 +1,20 @@
+<%= simple_form_for(@member) do |f| %>
+  <%  f.error_notification %>
+
+
+  <div class="field">
+    <%= f.label :ganador %><br />
+       <%= f.check_box :ganador %>
+  </div>
+  <div class="field">
+
+    <%= f.association :tournament %>
+  </div>
+  <div class="field">
+
+    <%= f.association :user %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+/*  
+Theme Name: Irrational
+Theme URI: http://buddypress.org/extend/themes/
+Description: The default theme for BuddyPress.
+Version: 1.1-beta
+Author: BuddyPress.org
+Author URI: http://buddypress.org
+Template: irrational
+*/
+
+@import url( ../irrational/css/sitewide.css );

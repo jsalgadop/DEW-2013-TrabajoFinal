@@ -1,0 +1,18 @@
+
+<br />
+
+<%= form_for(@login, :url => "validate_access") do |f| %>
+  <div class="field">
+    <%= f.label("User Name") %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label("Password") %><br />
+    <%= f.text_field :clave %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Login" %>
+  </div>
+<% end %>
+
+<%= link_to 'Register', new_user_path %>

@@ -1,0 +1,27 @@
+<h1>Listing tournament's members</h1>
+
+<br>
+
+<p>
+  Current tournament: <b><%= @tournament.name %></b>
+</p>
+
+<table border="1">
+  <tr>
+    <th>Member</th>
+    <th>Winner</th>
+    <th></th>
+  </tr>
+
+<% @members.each do |member| %>
+  <tr>
+    <td><%= member.user.name + ' ' + member.user.paterno + ' ' + member.user.materno %></td>
+    <td><%= member.ganador %></td>
+    <td><%= link_to 'Show', User.find_by_nombreusuario($user.nombre) %></td>
+  </tr>
+<% end %>
+</table>
+
+<p>
+  Total members: <%= @members.count %>
+</p>

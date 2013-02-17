@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Opcion:</b>
+  <%= @filter.opcion %>
+</p>
+
+<p>
+  <b>Local:</b>
+  <%= @filter.local %>
+</p>
+
+<p>
+  <b>Estadp:</b>
+  <%= @filter.estadp %>
+</p>
+
+
+<%= link_to 'Edit', edit_filter_path(@filter) %> |
+<%= link_to 'Back', filters_path %>

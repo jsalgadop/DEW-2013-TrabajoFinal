@@ -1,0 +1,11 @@
+.btn1 span, .btn2 span, .btn3 span { padding-top: 2px; }
+
+.flagtabs ul li a, .flagtabs ul li.prev a { padding-top: 1px; }
+
+#agora table.thread td.user { width: 210px; vertical-align: top; }
+#agora table.thread td.count { width: 70px; }
+#agora table.thread td.quote { width: 80px; }
+#agora table.thread td.vote { width: 50px; }
+#agora table.thread td.link { width: 55px; }
+
+#agora table#starter td.quote { width: 170px; text-align: right;  }

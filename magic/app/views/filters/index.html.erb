@@ -1,0 +1,35 @@
+<h1>Listing filters</h1>
+
+<br>
+
+<%= form_for(@filter, :url => "display_tournament") do |f| %>
+    <table border="0">
+      <tr>
+        <td width=150>
+          <%= radio_button_tag(:opcion, "1") %>
+          <%= label_tag("Select by local") %>
+        </td>
+        <td width=150>
+          <%= f.collection_select :local_id, Local.all, :id, :nombre, :prompt => false %>
+        </td>
+      </tr>
+      <tr>
+        <td width=150>
+          <%= radio_button_tag(:opcion, "2") %>
+          <%= label_tag("Select by status") %>
+        </td>
+        <td width=150>
+            <%= f.select :estado, [['Pendiente','Pendiente'],['Activo','Activo'],['Finalizado','Finalizado']] %>
+        </td>
+      </tr>
+      <tr>
+        <td width=150>
+          <%= radio_button_tag(:opcion, "3", :checked => true) %>
+          <%= label_tag("Select availables") %>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <%= submit_tag "Search", name: nil %>
+<% end %>

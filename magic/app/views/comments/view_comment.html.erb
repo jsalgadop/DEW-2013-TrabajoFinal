@@ -1,0 +1,45 @@
+<h1>Listing tournament's comments</h1>
+
+<br>
+
+<p>
+  Current tournament: <b><%= $current_tournament.name %></b>
+</p>
+
+<p>
+  Current User: <b><%= User.find_by_nombreusuario($user.nombre).nombreusuario + ' ' + User.find_by_nombreusuario($user.nombre).paterno %></b>
+</p>
+
+<table border="1">
+  <tr>
+    <th>Comment</th>
+    <th>Author</th>
+    <th>Calification</th>
+    <th>Replica</th>
+    <th>Calificator</th>
+    <th>Rejoinder</th>
+    <th></th>
+  </tr>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td><%= comment.comentario %></td>
+    <td><%= comment.user.nombre + ' ' + comment.user.paterno + ' ' + comment.user.materno %></td>
+    <td><%= comment.calificacion %></td>
+    <td><%= comment.replica %></td>
+    <td><%= comment.calificador %></td>
+    <td><%= comment.duplica %></td>
+    <td>Calificate</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<p>
+  Total comments: <b><%= @comments.count %></b>
+</p>
+
+<br>
+
+<%= link_to 'New Comment', add_comment_comment_path %>

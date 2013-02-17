@@ -1,0 +1,22 @@
+<%= simple_form_for(@comment) do |f| %>
+  <%  f.error_notification %>
+
+  <div class="field">
+     <%= f.text_area :comentario %>
+  </div>
+  <div class="field">
+    <%= f.label :calificacion %>
+   <%= f.select :calificacion, [['1','1'],['2','2'],['3','3'],['4','4'],['5','5']] %>
+  </div>
+  <div class="field">
+    <%= f.association  :tournament %>
+  </div>
+  <div class="field">
+ 
+    <%= f.association  :user %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

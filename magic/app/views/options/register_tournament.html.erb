@@ -1,0 +1,17 @@
+<br>
+
+<p>
+	Tournament: <b><%= @member.tournament.name %></b>
+</p>
+
+<p>
+	Member: <b><%= @member.user.name + ' ' + @member.user.paterno %></b>
+</p>
+
+<br>
+
+<p>
+	<%= @tournament_message %>
+</p>
+
+<%= link_to 'Back', options_path %>

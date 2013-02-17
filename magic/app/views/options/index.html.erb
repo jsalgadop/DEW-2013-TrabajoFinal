@@ -1,0 +1,111 @@
+<h1>Listing searching options</h1>
+<style type="text/css">
+
+  .searchs{
+    width: 307px;
+    float:left;
+    padding:20px;
+    color:blue;
+  }
+
+  #table tr td{
+    padding: 10px;
+    width: 100px;
+  }
+</style>
+
+<br>
+
+<p>
+</p>
+<div class="searchs">
+<%= form_for($option, :url => "filter_by_local") do |f| %>
+    <table border="0">
+      <tr>
+        <td width="150">
+          Search by local
+        </td>
+        <td width="150">
+          <%= f.collection_select :local_id, Local.all, :id, :name, :prompt => false %>
+        </td>
+      </tr>
+    </table>
+    <%= submit_tag "Search" %>
+<% end %>
+</div>
+<br>
+
+<div class="searchs">
+<%= form_for($option, :url => "filter_by_status") do |f| %>
+    <table border="0">
+      <tr>
+        <td width="150">
+          Search by status
+        </td>
+        <td width=150>
+            <%= f.select :estado, [['Pendiente','Pendiente'],['Activo','Activo'],['Finalizado','Finalizado']] %>
+        </td>
+      </tr>
+    </table>
+    <%= submit_tag "Search" %>
+<% end %>
+</div>
+<br>
+
+<div class="searchs">
+<%= form_for($option, :url => "filter_by_capacity") do |f| %>
+    <table border="0">
+      <tr>
+        <td width="150">
+          Search all availables
+        </td>
+        <td width=150>
+        </td>
+      </tr>
+    </table>
+    <%= submit_tag "Search" %>
+<% end %>
+</div>
+<br>
+
+<br>
+
+
+<div style="width:827px">
+<%= link_to 'Back', logins_path %>
+
+<table border="1" id="table">
+  <tr style="background: silver">
+    <th>Name</th>
+      <th>Imagen</th>
+      <th>Local</th>
+      <th>Capacity</th>
+      <th>Players</th>
+      <th>Date and Time</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+  </tr>
+<% @tournaments.each do |tournament|%>
+  <tr>
+    <td> <img src="http://2.bp.blogspot.com/-naNFMK1N26w/UDFNvkclXBI/AAAAAAAAAOg/ZmLmbDMRFss/s1600/gameday_reya.jpg" style="
+    width: 73px;
+    height: 107px;
+" /> </td>
+    <td><%= tournament.name %></td>
+    <td><%= tournament.local.name %></td>
+    <td align="center"><%= tournament.cant_part %></td>
+    <td><%= tournament.fecha_hora %></td>
+    <td><%= tournament.estado %></td>
+    <td>
+    
+    </td>
+      <td>
+  
+      </td>
+    
+  <tr>
+<% end %>
+</table>
+</div>
